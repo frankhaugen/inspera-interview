@@ -2,14 +2,17 @@
 My on-the-fly documentation while working on this challenge
 
 ### System specs
-* Ubuntu (18.04) Mate (1.20.1)
 * Virtual machine (VirtualBox)
+* Ubuntu (18.04) Mate (1.20.1)
+* Eclipse IDE (4.8.0)
+* GitHub for Version Control
 
 ## General notes
-* 
+* Setting up the software was simple enough, but there could have been better specifications
 * My lack of experience with the tools, (Java + Eclipse), requires me to put this together as smoothly as possible as best I can.
 * I'm avoiding using other libraries, to not waste time reading documentation for another library when I need to read the documentation for the suggested library anyway
 * I will try to refrain from looking after answers to this challange on the web, (stackexchange etc.)
+* Version control through Git and GitHub, (private repo)
 
 ___
 
@@ -31,7 +34,7 @@ Feel free to use any external libraries you want, just add them to the .pom file
 - Implement the parser
 - The parser should take two JSONObjects as input, and output a new JSONObject on the following format:
 
-```json
+```
 {
   "meta": [
     // List of the fields updated with before and after values
