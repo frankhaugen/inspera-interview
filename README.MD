@@ -1,3 +1,7 @@
+### Assumptions
+My lack of experience with the tools, (Java + Eclipse), requires me to put this together as smoothly as possible
+
+
 ## Goal
 The goal of the project is to implement a parser that takes two JSONObjects (net.sf.json.JSONObject, or another similar framework) as input and returns a JSONObject that details the changes between the two input objects.
 
