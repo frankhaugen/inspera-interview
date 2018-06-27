@@ -14,9 +14,9 @@ import com.github.cliftonlabs.json_simple.Jsoner;
 public class main {
 	
 	public Parser parser = new Parser();
-	public JSONObject jsonresult = new JSONObject();
-	public JSONObject jsonbefore = new JSONObject();
-	public JSONObject jsonrafter = new JSONObject();
+	public JsonObject jsonresult = new JsonObject();
+	public JsonObject jsonbefore = new JsonObject();
+	public JsonObject jsonrafter = new JsonObject();
 	
 	public String beforestr = "{\n" + 
 			"  \"id\": 1,\n" + 
@@ -48,12 +48,9 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.print("Hello World");
-		//File file = new File("src/main/before.json");
-		//System.out.println(file.getAbsolutePath());
 		
 		
 		
-		JSONObject json = new JSONObject();
 		
 		
 		

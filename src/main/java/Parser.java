@@ -1,11 +1,14 @@
-//import net.sf.json.JSONObject;
+import com.github.cliftonlabs.json_simple.JsonObject;
+
+//import net.sf.json.JsonObject;
+
 
 /**
  *
  */
 public class Parser {
 
-    public JSONObject parse(JSONObject before, JSONObject after) {
+    public JsonObject parse(JsonObject before, JsonObject after) {
         // TODO Implement this
         return null;
     }
