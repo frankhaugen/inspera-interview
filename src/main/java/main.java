@@ -1,24 +1,19 @@
 import java.io.*;
 
+import org.json.*;
 import org.junit.Before;
 //import net.sf.json.*;
 
-import com.github.cliftonlabs.json_simple.JsonArray;
-import com.github.cliftonlabs.json_simple.JsonException;
-import com.github.cliftonlabs.json_simple.JsonKey;
-import com.github.cliftonlabs.json_simple.JsonObject;
-import com.github.cliftonlabs.json_simple.Jsonable;
-import com.github.cliftonlabs.json_simple.Jsoner;
 
 @SuppressWarnings("unused")
 public class main {
 	
 	public Parser parser = new Parser();
-	public JsonObject jsonresult = new JsonObject();
-	public JsonObject jsonbefore = new JsonObject();
-	public JsonObject jsonrafter = new JsonObject();
+	public JSONObject jsonresult = new JSONObject();
+	//public 
+	public JSONObject jsonrafter = new JSONObject();
 	
-	public String beforestr = "{\n" + 
+	public static String beforestr = "{\n" + 
 			"  \"id\": 1,\n" + 
 			"  \"meta\": {\n" + 
 			"    \"title\": \"Title\",\n" + 
@@ -47,13 +42,11 @@ public class main {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.print("Hello World");
+		//System.out.print("Hello World");
 		
+		JSONObject jsonbefore = new JSONObject(beforestr);
 		
-		
-		
-		
-		
+		System.out.print(jsonbefore.toString(2));
 		
 	}
 

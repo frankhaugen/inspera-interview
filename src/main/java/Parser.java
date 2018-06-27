@@ -1,5 +1,5 @@
-import com.github.cliftonlabs.json_simple.JsonObject;
 
+import org.json.*;
 //import net.sf.json.JsonObject;
 
 
@@ -8,7 +8,7 @@ import com.github.cliftonlabs.json_simple.JsonObject;
  */
 public class Parser {
 
-    public JsonObject parse(JsonObject before, JsonObject after) {
+    public JSONObject parse(JSONObject before, JSONObject after) {
         // TODO Implement this
         return null;
     }
