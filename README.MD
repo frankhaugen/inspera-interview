@@ -10,7 +10,8 @@
 
 ## before.json
 <details><summary>Expand before.json</summary>
-     <p>
+<p>
+
 ```
 {
      "id": 1,
@@ -39,6 +40,7 @@
    }
 
 ```
+
      </p>
 </details>
 
