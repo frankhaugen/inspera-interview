@@ -9,9 +9,9 @@
 
 
 ## before.json
-<details><summary>CLICK ME</summary>
+<details><summary>Expand before.json</summary>
      <p>
-	  ```JSON
+	  ```
 	  {
 	       "id": 1,
 	       "meta": {
