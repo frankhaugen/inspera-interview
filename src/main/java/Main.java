@@ -8,8 +8,16 @@ import java.util.stream.Collectors;
 import org.json.*;
 
 public class Main {
+     
+     // Testing variables
+     public static String testDT = "2016-01-20T10:00:00Z";
+     
+     
     // Instantiate a new Parser
     public static Parser parser = new Parser();
+    
+    // Instantiate class time zone editor
+    public static TimeZoneConverter tzConverter = new TimeZoneConverter();
     
     // Declare variables containing URIs to source data
     public static String jsonFileBeforeURI = "src\\main\\resources\\before.json";
@@ -29,7 +37,11 @@ public class Main {
 	result.put(jsonResult);
 	
         // Display the parsed data
-        System.out.print(result.toString(3));
+        System.out.println(result.toString(3));
+	
+	System.out.println("");
+	System.out.println("Test time: " + testDT);
+	System.out.println(tzConverter.Convert(testDT, -2));
     }
     
     // Method to extract text from files from inputted path

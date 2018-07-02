@@ -2,7 +2,45 @@
 
 ## Helpful links
 
-[http://json2table.com/]json2table.com - Simple tool to visualize json data in a simple table, to easier make assumptions about how to treat the data
+[json2table](http://json2table.com) - Simple tool to visualize json data in a simple table, to easier make assumptions about how to treat the data
+
+
+
+
+
+## before.json
+<details><summary>CLICK ME</summary>
+     <p>
+	  ```json
+	  {
+	       "id": 1,
+	       "meta": {
+		 "title": "Title",
+		 "startTime": "2016-01-20T10:00:00Z",
+		 "endTime": "2016-01-20T16:00:00Z"
+	       },
+	       "candidates": [
+		 {
+		   "id": 10,
+		   "candidateName": "C1",
+		   "extraTime": 0
+		 },
+		 {
+		   "id": 11,
+		   "candidateName": "C2",
+		   "extraTime": 10
+		 },
+		 {
+		   "id": 12,
+		   "candidateName": "C3",
+		   "extraTime": 20
+		 }
+	       ]
+	     }
+
+	  ```
+     </p>
+</details>
 
 
 
