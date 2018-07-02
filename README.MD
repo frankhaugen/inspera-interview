@@ -11,7 +11,7 @@
 ## before.json
 <details><summary>CLICK ME</summary>
      <p>
-	  ```json
+	  ```JSON
 	  {
 	       "id": 1,
 	       "meta": {
