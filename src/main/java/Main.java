@@ -26,9 +26,11 @@ public class Main {
         JSONObject jsonAfter = new JSONObject(GetTextFromFile(jsonFileBeforeURI));
         JSONObject jsonResult = parser.parse(jsonBefore, jsonAfter);
         
-        
+	JSONArray result = new JSONArray();
+	result.put(jsonResult);
+	
         // Display the parsed data
-        System.out.println(jsonResult);
+        System.out.print(result.toString(3));
     }
     
     // Method to extract text from files from inputted path
