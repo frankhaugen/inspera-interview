@@ -10,9 +10,8 @@
 
 ## before.json
 <details><summary>Expand before.json</summary>
-<p>
 
-```
+```json
 {
      "id": 1,
      "meta": {
@@ -41,7 +40,6 @@
 
 ```
 
-     </p>
 </details>
 
 
