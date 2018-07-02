@@ -41,7 +41,7 @@ public class Main {
 	
 	System.out.println("");
 	System.out.println("Test time: " + testDT);
-	System.out.println(tzConverter.Convert(testDT, -2));
+	System.out.println(tzConverter.Convert(testDT, -2l));
     }
     
     // Method to extract text from files from inputted path
