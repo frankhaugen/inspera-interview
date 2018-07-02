@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 //import net.sf.json.*;
 import org.json.*;
 
-
 public class Main {
     // Instantiate a new Parser
     public static Parser parser = new Parser();

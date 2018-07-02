@@ -1,4 +1,12 @@
-# Challenge
+# Solution
+
+## Helpful links
+
+[http://json2table.com/]json2table.com - Simple tool to visualize json data in a simple table, to easier make assumptions about how to treat the data
+
+
+
+# Assignment
 
 ## Goal
 The goal of the project is to implement a parser that takes two JSONObjects (net.sf.json.JSONObject, or another similar framework) as input and returns a JSONObject that details the changes between the two input objects.
