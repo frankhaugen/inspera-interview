@@ -9,11 +9,16 @@ public class TimeZoneConverter
 {
      public String Convert(String inputTime, String zoneId)
      {
+	  // Formatter to specify the returned datetime strings's format
+	  DateTimeFormatter dtFormatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
 	  
+	  // Convert inputtedt datetime-string to a recognizable format before manipulation. Instant is the most logical format
 	  Instant instant = Instant.parse(inputTime);
-	  ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of("Europe/Oslo"));
 	  
-	  String output = zonedDateTime.toString();
+	  // Convert Instant to another DateTime format and changing the time to
+	  ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of(zoneId));
+	  
+	  String output = zonedDateTime.format(dtFormatter);
 	  return output;
      }
 }
