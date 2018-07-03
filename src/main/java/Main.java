@@ -15,6 +15,7 @@ public class Main {
     public static String jsonFileBeforeURI = "src\\main\\resources\\before.json";
     public static String jsonFileAfterURI = "src\\main\\resources\\after.json";
     
+    // Declearing a variable containing the timezone-ID we want to convert date to
     public static String timeZone = "Europe/Oslo";
     
     /**

@@ -3,6 +3,7 @@
 ## Comments
 * The assignment does not give context to the json-data, or the assignment as a whole, (lacks a business-case framework to understand the need that is to be fulfilled)
 * The suggested JSON library was confusingly hard to find documentation for, so I chose to use org.json instead, (better documentation)
+* Without some context I'm uncertain how to make a sensible parser for the JSON data, leading me to work to make a "diff" as the diff.json-file is structured. This is the "wrong" way of working on this kind of problem, as 
 
 ## Assumptions
 Timezone - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year
@@ -125,6 +126,13 @@ Timezone - Due to lack of flexibility in the assignment's use of the timezone sp
 ```
 
 </details>
+
+## Data as table(-ish)
+id | meta | candidates
+
+
+
+
 
 
 ___
