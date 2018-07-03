@@ -40,8 +40,8 @@ public class Main {
         System.out.println(result.toString(3));
 	
 	System.out.println("");
-	System.out.println("Test time: " + testDT);
-	System.out.println(tzConverter.Convert(testDT, -2l));
+	System.out.println(testDT);
+	System.out.println(tzConverter.Convert(testDT, "Europe/Oslo"));
     }
     
     // Method to extract text from files from inputted path

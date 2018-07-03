@@ -1,9 +1,16 @@
 # Solution
 
+## Comments
+* The assignment does not give context to the json-data, or the assignment as a whole, (lacks a business-case framework to understand the need that is to be fulfilled)
+
+## Assumptions
+Timezone - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year
+
+
 ## Helpful links
 
 [json2table](http://json2table.com) - Simple tool to visualize json data in a simple table, to easier make assumptions about how to treat the data
-
+[Java DateTime timezone conversion](https://www.mkyong.com/java/java-convert-date-and-time-between-timezone/) - Tutorial on timezones
 
 
 
@@ -75,6 +82,48 @@
 
 </details>
 
+<details><summary>Expand diff.json</summary>
+
+```json
+{
+  "meta": [
+    {
+      "field": "title",
+      "before": "Title",
+      "after": "New Title"
+    },
+    {
+      "field": "endTime",
+      "before": "2016-01-20T18:00:00+02",
+      "after": "2016-01-20T20:00:00+02"
+    }
+  ],
+  "candidates": {
+    "edited": [
+      {
+        "id": 10
+      },
+      {
+        "id": 11
+      }
+    ],
+    "added": [
+      {
+        "id": 13
+      }
+    ],
+    "removed": [
+      {
+        "id": 12
+      }
+    ]
+  }
+}
+
+
+```
+
+</details>
 
 
 ___

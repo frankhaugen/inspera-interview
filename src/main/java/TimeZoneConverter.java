@@ -7,25 +7,13 @@ import java.time.format.DateTimeFormatter;
  */
 public class TimeZoneConverter
 {
-     public String Convert(String inputTime, Long timeZoneOffset, ZoneId zoneId)
+     public String Convert(String inputTime, String zoneId)
      {
 	  
-	  DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
+	  Instant instant = Instant.parse(inputTime);
+	  ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of("Europe/Oslo"));
 	  
-	  
-	  
-	  ZonedDateTime dt = ZonedDateTime.parse(inputTime, formatter);
-	  System.out.println(dt);
-	  
-	  if (timeZoneOffset < 0)
-	  {
-	       dt = dt.withZoneSameLocal(zoneId);
-	  } else
-	  {
-	       dt = dt.plusHours(timeZoneOffset);
-	  }
-	  
-	  String output = dt.toString();
+	  String output = zonedDateTime.toString();
 	  return output;
      }
 }
