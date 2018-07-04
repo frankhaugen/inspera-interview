@@ -20,7 +20,15 @@ public class Parser {
 	  output.accumulate("first", before);
 	  
 	  // Before
-	  JSONArray jsonArrayBeforeCandidates = before.getJSONArray("candidates");
+	  
+	  
+	  System.out.println(candidates.toString());
+        return output;
+    }
+    
+    public List<Candidate> CreateCandidateList()
+    {
+	 JSONArray jsonArrayBeforeCandidates = before.getJSONArray("candidates");
 	  JSONObject jsonObjectBeforeMeta = before.getJSONObject("meta");
 	  
 	  int uid = 0;
@@ -45,9 +53,6 @@ public class Parser {
 	 {
 	      System.out.println("For loop ERROR: " + e);
 	 }
-	  
-	  System.out.println(candidates.toString());
-        return output;
     }
 
 }
