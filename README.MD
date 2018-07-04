@@ -6,6 +6,9 @@ Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7
 Hours | 3 | 0 | 0 | 0 | 5 | 3 | 3 | 0 | 0 
 Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | 0 | 0 
 
+## My though processes
+#### JSON Parsing
+Working with JSON is unbelievably hard when it's the first time I'm really working with it
 
 ## Comments
 * The assignment does not give context to the json-data, or the assignment as a whole, (lacks a business-case framework to understand the need that is to be fulfilled)
