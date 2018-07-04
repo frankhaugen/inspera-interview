@@ -1,5 +1,6 @@
 //import net.sf.json.JSONObject;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import org.json.*;
 //import com.google.gson;
@@ -43,19 +44,59 @@ public class Parser {
 	  JSONArray outputAdded = new JSONArray();
 	  JSONArray outputRemoved = new JSONArray();
 	  
+	  
+	  
+	  // TODO check for changes
+	  
+	  JSONArray inputCandidatesBefore = before.getJSONArray("candidates");
+	  JSONArray inputCandidatesAfter = after.getJSONArray("candidates");
+	  
+	  
+	  
+	  for (int i = 0; i < inputCandidatesBefore.length(); i++)
+	  {
+	       for (int j = 0; j < inputCandidatesAfter.length(); j++)
+	       {
+		    if (inputCandidatesBefore.getJSONObject(i).getInt("id") == inputCandidatesAfter.getJSONObject(j).getInt("id"))
+		    {
+			 outputEdited.put(inputCandidatesAfter.getJSONObject(j));
+			 inputCandidatesBefore.remove(i);
+			 inputCandidatesAfter.remove(j);
+		    }
+	       }
+	  }
+	  
+	  // TODO Figure this out
+	  for (int i = 0; i < inputCandidatesBefore.length(); i++)
+	  {
+	       for (int j = 0; j < inputCandidatesAfter.length(); j++)
+	       {
+		    if (inputCandidatesBefore.getJSONObject(i).getInt("id") != inputCandidatesAfter.getJSONObject(j).getInt("id"))
+		    {
+			 outputRemoved.put(inputCandidatesBefore.getJSONObject(i));
+			 inputCandidatesBefore.remove(i);
+		    }
+	       }
+	  }
+	  for (int i = 0; i < inputCandidatesAfter.length(); i++)
+	  {
+	       outputAdded.put(inputCandidatesAfter.getJSONObject(i));
+	  }
+	  
+	  
 	  outputCandidates.put("edited", outputEdited);
 	  outputCandidates.put("added", outputAdded);
 	  outputCandidates.put("removed", outputRemoved);
 	  
-	  // TODO chack for changes
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+	  // Unfortunately keys() just returns a raw Iterator...
+	  Iterator beforeIterator = inputCandidatesBefore.iterator();
+	  while (beforeIterator.hasNext()) {
+	      Object candidateObject = beforeIterator.next();
+	      
+	      
+	      
+	      System.out.println(candidateObject.toString());
+	  }
 	  
 	  output.put("meta", outputMeta);
 	  output.put("candidatates", outputCandidates);
@@ -63,39 +104,4 @@ public class Parser {
 
         return output;
     }
-    
-    
-    public List<Candidate> CreateCandidateList(JSONObject input)
-    {
-	 List<Candidate> output = new ArrayList<Candidate>();
-	 
-	  JSONArray jsonArrayCandidates = input.getJSONArray("candidates");
-	  JSONObject jsonObjectMeta = input.getJSONObject("meta");
-	  
-	  int uid = 0;
-	  try
-	 {
-	      for (int i = 0; i < jsonArrayCandidates.length(); i++)
-	       {
-		    JSONObject candidatedetails = jsonArrayCandidates.getJSONObject(i);
-		    //System.out.println(candidatedetails);
-		    
-		    output.add(new Candidate(
-			 uid,
-			 candidatedetails.getInt("id"),
-			 jsonObjectMeta.getString("title"),
-			 candidatedetails.getString("candidateName"),
-			 candidatedetails.getInt("extraTime"),
-			 jsonObjectMeta.getString("startTime"),
-			 jsonObjectMeta.getString("endTime")));
-		    uid++;
-	       }
-	 } catch (Exception e)
-	 {
-	      //System.out.println("For loop ERROR: " + e);
-	 }
-	  
-	  return output;
-    }
-
 }
