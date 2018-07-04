@@ -12,7 +12,7 @@ public class Parser {
      /**
       *
       */
-    //public 
+    //public TimeZoneConverter tzConverter = new TimeZoneConverter();
      
     public JSONObject parse(JSONObject before, JSONObject after) {
 	 
@@ -20,21 +20,23 @@ public class Parser {
 	  JSONObject inputMetaAfter = after.getJSONObject("meta");
 	  // TODO Implement this
 	  JSONObject output = new JSONObject();
+	  
+	  
 	  JSONArray outputMeta = new JSONArray();
 	  
 	  JSONObject outputMetaChild1 = new JSONObject();
-	  JSONObject outputMetaChild1_a = new JSONObject();
-	  JSONObject outputMetaChild1_b = new JSONObject();
-	  JSONObject outputMetaChild1_c = new JSONObject();
-	  
-	  //outputMetaChild1_a = inputMetaBefore.get("title");
-	  
-	  outputMetaChild1.append("field", outputMetaChild1_a);
-	  outputMetaChild1.append("before", inputMetaBefore.get("title"));
-	  outputMetaChild1.append("after", inputMetaAfter.get("title"));
-	  
 	  JSONObject outputMetaChild2 = new JSONObject();
 	  
+	  outputMetaChild1.put("field", "title");
+	  outputMetaChild1.put("before", inputMetaBefore.get("title"));
+	  outputMetaChild1.put("after", inputMetaAfter.get("title"));
+	  
+	  outputMetaChild2.put("field", "endTime");
+	  outputMetaChild2.put("before", TimeZoneConverter.Convert(inputMetaBefore.get("endTime").toString(), "Europe/Oslo"));
+	  outputMetaChild2.put("after", TimeZoneConverter.Convert(inputMetaAfter.get("endTime").toString(), "Europe/Oslo"));
+	  
+	  outputMeta.put(outputMetaChild1);
+	  outputMeta.put(outputMetaChild2);
 	  
 	  JSONObject outputCandidates = new JSONObject();
 	  
@@ -44,12 +46,12 @@ public class Parser {
 	  
 	  
 	  
-	  outputCandidates.append("edited", outputEdited);
-	  outputCandidates.append("added", outputAdded);
-	  outputCandidates.append("removed", outputRemoved);
+	  outputCandidates.put("edited", outputEdited);
+	  outputCandidates.put("added", outputAdded);
+	  outputCandidates.put("removed", outputRemoved);
 	  
-	  output.append("meta", outputMeta);
-	  output.append("candidatates", outputCandidates);
+	  output.put("meta", outputMeta);
+	  output.put("candidatates", outputCandidates);
 	  
 	  //System.out.println("Test output: " + before.getJSONArray("candidates"));
 	  //System.out.println("Test output: " + before.getJSONObject("meta"));

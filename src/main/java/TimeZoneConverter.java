@@ -7,7 +7,8 @@ import java.time.format.DateTimeFormatter;
  */
 public class TimeZoneConverter
 {
-     public String Convert(String inputTime, String zoneId)
+     
+     public static String Convert(String inputTime, String zoneId)
      {
 	  // Formatter to specify the returned datetime strings's format
 	  DateTimeFormatter dtFormatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
