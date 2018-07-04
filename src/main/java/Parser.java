@@ -15,7 +15,41 @@ public class Parser {
     //public 
      
     public JSONObject parse(JSONObject before, JSONObject after) {
+	 
+	  JSONObject inputMetaBefore = before.getJSONObject("meta");
+	  JSONObject inputMetaAfter = after.getJSONObject("meta");
 	  // TODO Implement this
+	  JSONObject output = new JSONObject();
+	  JSONArray outputMeta = new JSONArray();
+	  
+	  JSONObject outputMetaChild1 = new JSONObject();
+	  JSONObject outputMetaChild1_a = new JSONObject();
+	  JSONObject outputMetaChild1_b = new JSONObject();
+	  JSONObject outputMetaChild1_c = new JSONObject();
+	  
+	  //outputMetaChild1_a = inputMetaBefore.get("title");
+	  
+	  outputMetaChild1.append("field", outputMetaChild1_a);
+	  outputMetaChild1.append("before", inputMetaBefore.get("title"));
+	  outputMetaChild1.append("after", inputMetaAfter.get("title"));
+	  
+	  JSONObject outputMetaChild2 = new JSONObject();
+	  
+	  
+	  JSONObject outputCandidates = new JSONObject();
+	  
+	  JSONArray outputEdited = new JSONArray();
+	  JSONArray outputAdded = new JSONArray();
+	  JSONArray outputRemoved = new JSONArray();
+	  
+	  
+	  
+	  outputCandidates.append("edited", outputEdited);
+	  outputCandidates.append("added", outputAdded);
+	  outputCandidates.append("removed", outputRemoved);
+	  
+	  output.append("meta", outputMeta);
+	  output.append("candidatates", outputCandidates);
 	  
 	  //System.out.println("Test output: " + before.getJSONArray("candidates"));
 	  //System.out.println("Test output: " + before.getJSONObject("meta"));
@@ -35,7 +69,7 @@ public class Parser {
 	  
 	  
 	  
-	  System.out.println(jsObj);
+	  //System.out.println(jsObj);
 	  
 	  for (Object candJSONObject : before.getJSONArray("candidates"))
 	  {
@@ -144,8 +178,8 @@ public class Parser {
 	  
 	  
 	  
-	  JSONObject output = new JSONObject();
-	  output.accumulate("first", before);
+	  
+	  //output.accumulate("first", before);
 	  
 	  // Before
 	  

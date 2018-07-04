@@ -29,19 +29,10 @@ public class Main {
         
 	 try
 	 {
-	      // Decleare a new JSONObject with the parsed data returned from the parser
-	       JSONObject jsonResult = parser.parse(jsonBefore, jsonAfter);
-
-	       // Declearing a new JSONArray to be displayed in the output
-	       JSONArray result = new JSONArray();
-
-	       // Add (put inside) the parsed JSON data into the array
-	       //TODO: Better way of doin this?
-	       result.put(jsonResult);
-
 	       // Display the parsed data in the console output
-	       //System.out.println(result.toString(3));
-	 } catch (Exception e)
+	       System.out.println(parser.parse(jsonBefore, jsonAfter).toString(3));
+	 }
+	 catch (Exception e)
 	 {
 	      System.out.println("ERROR: " + e);
 	 }
