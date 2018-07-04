@@ -25,7 +25,7 @@ public class Main {
         
         // Decleared new JSONObjects
         JSONObject jsonBefore = new JSONObject(FiletextCollector.Collect(jsonFileBeforeURI));
-        JSONObject jsonAfter = new JSONObject(FiletextCollector.Collect(jsonFileBeforeURI));
+        JSONObject jsonAfter = new JSONObject(FiletextCollector.Collect(jsonFileAfterURI));
         
 	 try
 	 {
