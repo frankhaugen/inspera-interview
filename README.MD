@@ -7,6 +7,8 @@ Hours | 3 | 0 | 0 | 0 | 5 | 3 | 3 | 0 | 0
 Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | 0 | 0 
 
 ## My though processes
+#### Documentation
+I am documenting this in the way I've been familiar with the last few years, and is more of a freeform method, rather than a documentation framework/standard. Working within govenrment bounderies, the focus was to write as much as possible and not worry about form
 #### JSON Parsing
 This is the first time I'm really working with json, and I find it to be somewhat unintuitive compared to XML, (which matches my thought pattern better)
 First I started working with the recommended json-library, but I changed over to org.json. Working with json-objects, its clear that this task is incredibly complex. Given my own approach to problem-solving, I reduced the complexity, and "flattened" the data. A simpler data-set should give more possibilities. This might reduce the finesse of the solution but solving a problem is what it's all about 
