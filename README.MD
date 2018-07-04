@@ -1,5 +1,10 @@
 # Solution
 
+## Progress
+|  | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 | 
+| Hours | 3 | 0 | 0 | 0 | 3 | 5 | 3 | 0 | 0 |
+| Hours | 3 | 0 | 0 | 0 | 3 | 5 | 3 | 0 | 0 | 
+
 ## Comments
 * The assignment does not give context to the json-data, or the assignment as a whole, (lacks a business-case framework to understand the need that is to be fulfilled)
 * The suggested JSON library was confusingly hard to find documentation for, so I chose to use org.json instead, (better documentation)
