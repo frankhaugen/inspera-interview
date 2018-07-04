@@ -19,15 +19,6 @@ public class Parser {
     public JSONObject parse(JSONObject before, JSONObject after) {
 	  // TODO Implement this
 	  
-	  List<String> list = new ArrayList<String>();
-
-	  Iterator<String> iterator = list.iterator();
-
-	  while(iterator.hasNext()){
-	      String aString = iterator.next();
-	  }
-	  
-	  
 	  JSONObject output = new JSONObject();
 	  output.accumulate("first", before);
 	  //output.accumulate("first", after);
