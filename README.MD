@@ -8,7 +8,14 @@ Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZ
 
 ## My though processes
 #### JSON Parsing
-Working with JSON is unbelievably hard when it's the first time I'm really working with it
+This is the first time I'm really working with json, and I find it to be somewhat unintuitive compared to XML, (which matches my thought pattern better)
+First I started working with the recommended json-library, but I changed over to org.json. Working with json-objects, its clear that this task is incredibly complex. Given my own approach to problem-solving, I reduced the complexity, and "flattened" the data. A simpler data-set should give more possibilities. This might reduce the finesse of the solution but solving a problem is what it's all about 
+#### Time Zones
+Time zones is in theory not that hard, but I spent a lot of time getting to know the the library, before finding a smooth solution. The solution takes the actual time-zone and not a specified number of hours to offset, (making future adaptions easier)
+#### Unit Testing
+This is something I'm struggeling to implement in a meaningful manner in this type of project, but I'm working on getting comfortable with the logic behind it. I feel that this project isn't well-suited for Unit Testing as I'm building the whole thing in one big messy branch
+ 
+
 
 ## Comments
 * The assignment does not give context to the json-data, or the assignment as a whole, (lacks a business-case framework to understand the need that is to be fulfilled)
@@ -16,6 +23,7 @@ Working with JSON is unbelievably hard when it's the first time I'm really worki
 * Time-Zones SUCK! Java datetime-handling is convoluted, and as unintuitive as it comes
 * Was tempted to convert JSON to XML, to work with a more familiar data format, but resisted. JSON is similar, but different enough to cause some frustrations, resulted in a lot of reading
 * The json documentation, and articles on the subject of merging n level data, is to flatten it
+* Using Git, (GitHub), is a must, but I started off wrong. I'm used to working with projects that only I contribute to, so branching is something I need better routines for. In this project I should have setup the "main" class in "Master" and branched out to a "develop" with "features" under that; attempting to only work within a set of files related to one set of functionality. I have jumped around working on the entire code simultaniously, and not in a tactical mannar to have maximum focus and efficency
 
 ## Assumptions
 Assistance - The abilities of a programmer is proportional to their ability to google, read documentation and use any trick necessary to overcome a challenge. I have done all of this to get this assigment done in a timely and meaningful manner

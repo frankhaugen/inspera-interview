@@ -1,9 +1,6 @@
 //import net.sf.json.JSONObject;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import org.json.*;
 
 /**
@@ -21,13 +18,10 @@ public class Parser {
 	  
 	  JSONObject output = new JSONObject();
 	  output.accumulate("first", before);
-	  //output.accumulate("first", after);
 	  
 	  // Before
 	  JSONArray jsonArrayBeforeCandidates = before.getJSONArray("candidates");
-	  //System.out.println(jsonArrayBeforeCandidates);
 	  JSONObject jsonObjectBeforeMeta = before.getJSONObject("meta");
-	  //System.out.println(jsonObjectBeforeMeta);
 	  
 	  int uid = 0;
 	  try
