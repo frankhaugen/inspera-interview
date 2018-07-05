@@ -53,6 +53,17 @@ public class Parser {
 	  
 	  
 	  
+	  
+	  
+	  for (int i = 0; i < inputCandidatesAfter.length(); i++)
+	  {
+	       for (int j = 0; j < inputCandidatesBefore.length(); j++)
+	       {
+		    
+		    outputAdded.put(inputCandidatesAfter.getJSONObject(i));
+	       }
+	  }
+	  
 	  for (int i = 0; i < inputCandidatesBefore.length(); i++)
 	  {
 	       for (int j = 0; j < inputCandidatesAfter.length(); j++)
@@ -78,12 +89,13 @@ public class Parser {
 		    }
 	       }
 	  }
+	  
+	  /*
+	  boolean found = false;
 	  for (int i = 0; i < inputCandidatesAfter.length(); i++)
-	  {
-	       outputAdded.put(inputCandidatesAfter.getJSONObject(i));
-	  }
-	  
-	  
+	      if (inputCandidatesAfter.getString(i).equals(myElementToSearch))
+		  found = true;
+	  */
 	  outputCandidates.put("edited", outputEdited);
 	  outputCandidates.put("added", outputAdded);
 	  outputCandidates.put("removed", outputRemoved);

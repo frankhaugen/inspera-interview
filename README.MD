@@ -3,15 +3,28 @@
 ## Progress
 Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 
 --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-Hours | 3 | 0 | 0 | 0 | 5 | 3 | 3 | 0 | 0 
+Hours | 3 | 0 | 0 | 0 | 4 | 3 | 3 | 5 | 0 
 Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | 0 | 0 
 
-## My though processes
+## Day-by-day overview
+27. Created a virtual Linux machine in VirtualBox to test IDEs, and toyed around with some code, and libraries. I also watched/read tutorials on the uses of Java IDEs
+1. I did at reset of the project to "start over" on GitHub. I configured NetBeans on my primary desktop computer. Ending with making a class to extract json text from the json-files "before" and "after". Before this I also spent some time learning Java
+2. The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library
+3. Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java
+4. I took the bull by the horns and changed aproach to the json parser, handling json opbjects directly. This meant a full re-coding of the parser. 
+
+
+
+
+## My thought processes
 #### Documentation
 I am documenting this in the way I've been familiar with the last few years, and is more of a freeform method, rather than a documentation framework/standard. Working within govenrment bounderies, the focus was to write as much as possible and not worry about form
 #### JSON Parsing
 This is the first time I'm really working with json, and I find it to be somewhat unintuitive compared to XML, (which matches my thought pattern better)
-First I started working with the recommended json-library, but I changed over to org.json. Working with json-objects, its clear that this task is incredibly complex. Given my own approach to problem-solving, I reduced the complexity, and "flattened" the data. A simpler data-set should give more possibilities. This might reduce the finesse of the solution but solving a problem is what it's all about 
+
+First I started working with the recommended json-library, but I changed over to org.json. Working with json-objects, its clear that this task is incredibly complex. Given my own approach to problem-solving, I reduced the complexity, and "flattened" the data. A simpler data-set should give more possibilities. This might reduce the finesse of the solution but solving a problem is what it's all about
+
+After wasting a couple of hours working with flattened data, I reverted strategy back to working directly with json, as my strategy whent from making something flexible, to something more specific to solv this assignment
 #### Time Zones
 Time zones is in theory not that hard, but I spent a lot of time getting to know the the library, before finding a smooth solution. The solution takes the actual time-zone and not a specified number of hours to offset, (making future adaptions easier)
 #### Unit Testing
