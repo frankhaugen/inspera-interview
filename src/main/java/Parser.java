@@ -1,9 +1,5 @@
-//import net.sf.json.JSONObject;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import org.json.*;
-//import com.google.gson;
 
 /**
  *
@@ -51,33 +47,86 @@ public class Parser {
 	  JSONArray inputCandidatesBefore = before.getJSONArray("candidates");
 	  JSONArray inputCandidatesAfter = after.getJSONArray("candidates");
 	  
+	  //List<int> array1 = new ArrayList<int>();
+	  
+	  Boolean objectAdded = false;
 	  
 	  
 	  
 	  
-	  for (int i = 0; i < inputCandidatesAfter.length(); i++)
-	  {
-	       for (int j = 0; j < inputCandidatesBefore.length(); j++)
-	       {
-		    
-		    outputAdded.put(inputCandidatesAfter.getJSONObject(i));
-	       }
-	  }
 	  
+	  // Locate the edited candidates
 	  for (int i = 0; i < inputCandidatesBefore.length(); i++)
 	  {
 	       for (int j = 0; j < inputCandidatesAfter.length(); j++)
 	       {
 		    if (inputCandidatesBefore.getJSONObject(i).getInt("id") == inputCandidatesAfter.getJSONObject(j).getInt("id"))
 		    {
-			 outputEdited.put(inputCandidatesAfter.getJSONObject(j));
-			 inputCandidatesBefore.remove(i);
-			 inputCandidatesAfter.remove(j);
+			 JSONObject tempJSONObject = new JSONObject();
+			 tempJSONObject.put("id", inputCandidatesAfter.getJSONObject(j).get("id"));
+			 //outputEdited.put(tempJSONObject);
 		    }
 	       }
 	  }
 	  
-	  // TODO Figure this out
+	  for (Object object : inputCandidatesBefore)
+	  {
+	       JSONObject testObject = (JSONObject)object;
+	       for (Object object2 : inputCandidatesAfter)
+	       {
+		    JSONObject testObject2 = (JSONObject)object2;
+		    if (testObject.getInt("id") == testObject2.getInt("id"))
+		    {
+			 System.out.println("TEST: " + testObject2.toString());
+			 outputEdited.put(testObject);
+		    }
+	       }
+	  }
+	  
+	  // Locate the added candidates
+	  for (int i = 0; i < 10; i++)
+	 {
+	      for (int j = 0; j < 10; j++)
+	      {
+		   
+	      }
+	 }
+	  
+	  //JsonNode patch = JsonDiff.asJson(JsonNode source, JsonNode target);
+	  
+	  for (Iterator inputIterator = inputCandidatesBefore.iterator(); inputIterator.hasNext();)
+	 {
+	       //System.out.println("Testing: " + inputIterator.);
+	      Object next = inputIterator.next();
+	      
+	 }
+	  
+	  //System.out.println(inputCandidatesBefore);
+	  //System.out.println(inputCandidatesAfter);
+	  
+	  JSONPointer pointer = new JSONPointer("");
+	  /*
+	  for (int i = 0; i < inputCandidatesAfter.length(); i++)
+	  {
+	       for (int j = 0; j < inputCandidatesBefore.length(); j++)
+	       {
+		    if (inputCandidatesAfter.getJSONObject(i).getInt("id") == inputCandidatesBefore.getJSONObject(i).getInt("id"))
+		    {
+			 objectAdded = true;
+		    }
+		    
+	       }
+	       if (objectAdded)
+	       {
+		    outputAdded.put(inputCandidatesAfter.getJSONObject(i));
+		    inputCandidatesAfter.remove(i);
+		    objectAdded = false;
+	       }
+	  }
+	  
+	  
+	  
+	  /* TODO Figure this out
 	  for (int i = 0; i < inputCandidatesBefore.length(); i++)
 	  {
 	       for (int j = 0; j < inputCandidatesAfter.length(); j++)
@@ -107,7 +156,7 @@ public class Parser {
 	      
 	      
 	      
-	      System.out.println(candidateObject.toString());
+	      //System.out.println(candidateObject.toString());
 	  }
 	  
 	  output.put("meta", outputMeta);
@@ -116,4 +165,14 @@ public class Parser {
 
         return output;
     }
+    
+    // Function to find the index of an element in a primitive array in Java
+     public static int find(int[] a, int target)
+     {
+	     for (int i = 0; i < a.length; i++)
+		     if (a[i] == target)
+			     return i;
+
+	     return -1;
+     }
 }
