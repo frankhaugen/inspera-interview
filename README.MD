@@ -14,10 +14,11 @@ Total time spent: 15
 01/07: I did at reset of the project to "start over" on GitHub. I configured NetBeans on my primary desktop computer. Ending with making a class to extract json text from the json-files "before" and "after". Before this I also spent some time learning Java\
 02/07: The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library\
 03/07: Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java\
-04/07: I took the bull by the horns and changed aproach to the json parser, handling json opbjects directly. This meant a full re-coding of the parser.\
-05/07: 
-06/07: 
-
+04/07: Worked on the parser using a traditional "flattened" data to compare the data\
+05/07: Read some more Json documentation and found a better way, (using oobjects directly), but didn't really get it to work as I wanted\
+06/07: Finished work on the parser, (there are some issues with the presentation/ordering of some elements\
+07/07: Implementing jUnit to pretend to be trained in working on complex software development using Unit Testing\
+08/07: Finishing up, beutification, and writing the last documentation
 
 
 ## My thought processes
