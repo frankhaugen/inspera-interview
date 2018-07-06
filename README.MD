@@ -1,18 +1,22 @@
 # Solution
 
 ## Progress
-Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 
---- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-Hours | 3 | 0 | 0 | 0 | 4 | 3 | 3 | 5 | 0 
-Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | 0 | 0 
+Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 | 6/7 | 7/7 
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+Hours | 2 | 0 | 0 | 0 | 3 | 2 | 2 | 2 | 1 | 1 | 2
+Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | Parser | Parser | jUnit 
+
+Total time spent: 15
+(Maybe doing this in the middle of my summer-plans was a bad idea)
 
 ## Day-by-day overview
-27. Created a virtual Linux machine in VirtualBox to test IDEs, and toyed around with some code, and libraries. I also watched/read tutorials on the uses of Java IDEs
-1. I did at reset of the project to "start over" on GitHub. I configured NetBeans on my primary desktop computer. Ending with making a class to extract json text from the json-files "before" and "after". Before this I also spent some time learning Java
-2. The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library
-3. Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java
-4. I took the bull by the horns and changed aproach to the json parser, handling json opbjects directly. This meant a full re-coding of the parser. 
-
+27/06: Created a virtual Linux machine in VirtualBox to test IDEs, and toyed around with some code, and libraries. I also watched/read tutorials on the uses of Java IDEs
+01/07: I did at reset of the project to "start over" on GitHub. I configured NetBeans on my primary desktop computer. Ending with making a class to extract json text from the json-files "before" and "after". Before this I also spent some time learning Java
+02/07: The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library
+03/07: Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java
+04/07: I took the bull by the horns and changed aproach to the json parser, handling json opbjects directly. This meant a full re-coding of the parser. 
+05/07: 
+06/07: 
 
 
 
