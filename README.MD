@@ -5,20 +5,21 @@ Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 | 6/7 | 7/7
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 Hours | 2 | 0 | 0 | 0 | 3 | 2 | 2 | 2 | 1 | 1 | 2
 Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | Parser | Parser | jUnit 
+(Maybe doing this in the middle of my summer-plans was a bad idea)  
+Total time spent: 15  
+A lot of the reading and watching tutorial have not been included
 
-Total time spent: 15
-(Maybe doing this in the middle of my summer-plans was a bad idea)
 
 ## Day-by-day overview
-27/06: Created a virtual Linux machine in VirtualBox to test IDEs, and toyed around with some code, and libraries. I also watched/read tutorials on the uses of Java IDEs\
-01/07: I did at reset of the project to "start over" on GitHub. I configured NetBeans on my primary desktop computer. Ending with making a class to extract json text from the json-files "before" and "after". Before this I also spent some time learning Java\
-02/07: The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library\
-03/07: Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java\
-04/07: Worked on the parser using a traditional "flattened" data to compare the data\
-05/07: Read some more Json documentation and found a better way, (using oobjects directly), but didn't really get it to work as I wanted\
-06/07: Finished work on the parser, (there are some issues with the presentation/ordering of some elements\
-07/07: Implementing jUnit to pretend to be trained in working on complex software development using Unit Testing\
-08/07: Finishing up, beutification, and writing the last documentation
+**27/06:** Created a virtual Linux machine in VirtualBox to test IDEs, and toyed around with some code, and libraries. I also watched/read tutorials on the uses of Java IDEs\
+**01/07:** I did at reset of the project to "start over" on GitHub. I configured NetBeans on my primary desktop computer. Ending with making a class to extract json text from the json-files "before" and "after". Before this I also spent some time learning Java\
+**02/07:** The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library\
+**03/07:** Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java\
+**04/07:** Worked on the parser using a traditional "flattened" data to compare the data\
+**05/07:** Read some more Json documentation and found a better way, (using oobjects directly), but didn't really get it to work as I wanted\
+**06/07:** Finished work on the parser, (there are some issues with the presentation/ordering of some elements\
+**07/07:** Implementing jUnit to pretend to be trained in working on complex software development using Unit Testing\
+**08/07:** Finishing up, beutification, and writing the last documentation
 
 
 ## My thought processes
