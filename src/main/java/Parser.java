@@ -85,6 +85,6 @@ public class Parser {
 	  output.put("candidatates", outputCandidates);
 	  
 
-        return output;
+        return output;   
     }
 }

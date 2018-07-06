@@ -14,5 +14,8 @@ That way multiple projects can share the same settings (useful for formatting ru
 Any value defined here will override the pom.xml file value but is only applicable to the current project.
 -->
         <netbeans.hint.license>cddl-netbeans-sun</netbeans.hint.license>
+        <com-junichi11-netbeans-changelf.enable>true</com-junichi11-netbeans-changelf.enable>
+        <com-junichi11-netbeans-changelf.use-project>true</com-junichi11-netbeans-changelf.use-project>
+        <com-junichi11-netbeans-changelf.use-global>false</com-junichi11-netbeans-changelf.use-global>
     </properties>
 </project-shared-configuration>
