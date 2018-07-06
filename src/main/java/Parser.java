@@ -1,38 +1,44 @@
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import org.json.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
- *
+ *   This parser takes two JSONObjects and compares them in a specific manner
  */
 public class Parser {
      
      /**
-      *
+      *	Created to parse two json datasets and returns a  
+      * parsed json dataset
+      * 
+      * @param before Takes an JSONObject
+      * @param after Takes a JSONObject
+      * @return JSONObject which is a "diff" between before and after
       */
-     
-    public static JSONObject parse(JSONObject before, JSONObject after) {
+     public static JSONObject parse(JSONObject before, JSONObject after) {
 	 
 	  JSONObject inputMetaBefore = before.getJSONObject("meta");
 	  JSONObject inputMetaAfter = after.getJSONObject("meta");
-	  // TODO Implement this
+	  
+	  // Create output JSONObject
 	  JSONObject output = new JSONObject();
 	  
-	  
+	  // Create JSONObject to contain metadata
 	  JSONArray outputMeta = new JSONArray();
 	  
+	  // Metadata has two child elements, this is the one we 
 	  JSONObject outputMetaChild1 = new JSONObject();
 	  JSONObject outputMetaChild2 = new JSONObject();
 	  
+	  // 
 	  outputMetaChild1.put("field", "title");
 	  outputMetaChild1.put("before", inputMetaBefore.get("title"));
 	  outputMetaChild1.put("after", inputMetaAfter.get("title"));
 	  
+	  
 	  outputMetaChild2.put("field", "endTime");
 	  outputMetaChild2.put("before", TimeZoneConverter.Convert(inputMetaBefore.get("endTime").toString(), "Europe/Oslo"));
 	  outputMetaChild2.put("after", TimeZoneConverter.Convert(inputMetaAfter.get("endTime").toString(), "Europe/Oslo"));
+	  
 	  
 	  outputMeta.put(outputMetaChild1);
 	  outputMeta.put(outputMetaChild2);
@@ -44,12 +50,11 @@ public class Parser {
 	  JSONArray outputRemoved = new JSONArray();
 	  
 	  
-	  
-	  // TODO check for changes
-	  
 	  JSONArray inputCandidatesBefore = before.getJSONArray("candidates");
 	  JSONArray inputCandidatesAfter = after.getJSONArray("candidates");
 	  
+	  
+	  // Check for edited
 	  inputCandidatesBefore.forEach(a ->
 	  {
 	       JSONObject candBefore = (JSONObject)a;
@@ -59,32 +64,58 @@ public class Parser {
 		    if (candBefore.get("id") == candAfter.get("id"))
 		    {
 			 outputEdited.put(new JSONObject().put("id", candBefore.getInt("id")));
-			 System.out.println("Foreach result true: " + b);
 		    }
 	       });
 	  });
 	  
+	  // Delete edited entries to simplify the process of sort added and deleted
+	  outputEdited.forEach(c ->
+	  {
+	       for (int i = 0; i < inputCandidatesBefore.length(); i++)
+	       {
+		    JSONObject candTest = (JSONObject)c;
+		    if (inputCandidatesBefore.getJSONObject(i).get("id") == candTest.get("id") )
+		    {
+			 inputCandidatesBefore.remove(i);
+		    }
+	       }
+	       for (int i = 0; i < inputCandidatesAfter.length(); i++)
+	       {
+		    JSONObject candTest = (JSONObject)c;
+		    if (inputCandidatesAfter.getJSONObject(i).get("id") == candTest.get("id") )
+		    {
+			 inputCandidatesAfter.remove(i);
+		    }
+	       }
+	  });
 	  
-	 
+	  /// TODO: Can this be done differently, (extract tom function/method?)
+	  // Add removed to JSONArray
+	  inputCandidatesBefore.forEach(a ->
+	  {
+	       JSONObject candBefore = (JSONObject)a;
+	       outputRemoved.put(new JSONObject().put("id", candBefore.getInt("id")));
+	  });
+	  
+	  // Add added to JSONArray
+	  inputCandidatesAfter.forEach(a ->
+	  {
+	       JSONObject candAfter = (JSONObject)a;
+	       outputAdded.put(new JSONObject().put("id", candAfter.getInt("id")));
+	  });
 	  
 	  
+	  // Collect the different types for 
+	  outputCandidates.accumulate("edited", outputEdited);
+	  outputCandidates.accumulate("added", outputAdded);
+	  outputCandidates.accumulate("removed", outputRemoved);
 	  
-	  //JsonNode patch = JsonDiff.asJson(JsonNode source, JsonNode target);
 	  
-	  for (Iterator inputIterator = inputCandidatesBefore.iterator(); inputIterator.hasNext();)
-	 {
-	       //System.out.println("Testing: " + inputIterator.);
-	      Object next = inputIterator.next();
-	 }
-	  
-	  outputCandidates.put("edited", outputEdited);
-	  outputCandidates.put("added", outputAdded);
-	  outputCandidates.put("removed", outputRemoved);
-	  
+	  // Final pieces of the out JSONObject
 	  output.put("meta", outputMeta);
 	  output.put("candidatates", outputCandidates);
 	  
-
-        return output;   
+	  // Output a JSONObject
+	  return output;   
     }
 }
