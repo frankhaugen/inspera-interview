@@ -14,8 +14,6 @@ import org.skyscreamer.jsonassert.*;
  */
 public class ParserTest {
 
-    //static Parser parser = new Parser();
-    
     static JSONObject jsonBefore;
     static JSONObject jsonAfter;
     static JSONObject jsonDiff;
@@ -35,6 +33,7 @@ public class ParserTest {
 	// Loed in test-data for validation from diff.json
 	jsonDiff = new JSONObject(FiletextCollector.Collect("src\\main\\resources\\diff.json"));
 	
+	// Get the result from the parser
 	jsonResult = Parser.parse(jsonBefore,jsonAfter);
 
 	  
@@ -44,10 +43,6 @@ public class ParserTest {
     @Test
     public void testIfJsonIsParsedCorrectly2()
     {
-	 System.out.println("Diff + Result:");
-	 System.out.println(jsonDiff.toString(0));
-	 System.out.println(jsonResult.toString(0));
-	 
 	 JSONAssert.assertEquals(jsonResult, jsonDiff, JSONCompareMode.LENIENT);
     }
     
