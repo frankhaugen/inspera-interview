@@ -1,15 +1,14 @@
 # Solution
 
 ## Progress
-Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 | 6/7 | 7/7 
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
-Hours | 2 | 0 | 0 | 0 | 3 | 2 | 2 | 2 | 1 | 1 | 2
-Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | Parser | Parser | jUnit 
+Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 | 6/7 | 7/7 | 8/7
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+Hours | 2 | 0 | 0 | 0 | 3 | 2 | 2 | 2 | 1 | 1 | 0 | 3
+Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | Parser | Parser | 0 | jUnit 
 
 (Maybe doing this in the middle of my summer-plans was a bad idea)  
 Total time spent: 15  
-A lot of the reading and watching tutorial have not been included
-
+A lot of the reading and watching tutorials have not been included\ Also the time spent is guestimates and not stopwatch-accurate, and so it's been rounded up for sake of honesty
 
 ## Day-by-day overview
 **27/06:** Created a virtual Linux machine in VirtualBox to test IDEs, and toyed around with some code, and libraries. I also watched/read tutorials on the uses of Java IDEs\
@@ -17,20 +16,18 @@ A lot of the reading and watching tutorial have not been included
 **02/07:** The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library\
 **03/07:** Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java\
 **04/07:** Worked on the parser using a traditional "flattened" data to compare the data\
-**05/07:** Read some more Json documentation and found a better way, (using oobjects directly), but didn't really get it to work as I wanted\
+**05/07:** Read some more Json documentation and found a better way, (using objects directly), but didn't really get it to work as I wanted\
 **06/07:** Finished work on the parser, (there are some issues with the presentation/ordering of some elements\
-**07/07:** Implementing jUnit to pretend to be trained in working on complex software development using Unit Testing\
-**08/07:** Finishing up, beutification, and writing the last documentation
+**08/07:** Finishing up with Unit Testing, beautification, and writing the last documentation
 
 
 ## My thought processes
 #### Documentation
 I am documenting this in the way I've been familiar with the last few years, and is more of a freeform method, rather than a documentation framework/standard. Working within govenrment bounderies, the focus was to write as much as possible and not worry about form
+
 #### JSON Parsing
-This is the first time I'm really working with json, and I find it to be somewhat unintuitive compared to XML, (which matches my thought pattern better)
-
-First I started working with the recommended json-library, but I changed over to org.json. Working with json-objects, its clear that this task is incredibly complex. Given my own approach to problem-solving, I reduced the complexity, and "flattened" the data. A simpler data-set should give more possibilities. This might reduce the finesse of the solution but solving a problem is what it's all about
-
+This is the first time I'm really working with json, and I find it to be somewhat unintuitive compared to XML, (which matches my thought pattern better)\
+First I started working with the recommended json-library, but I changed over to org.json. Working with json-objects, its clear that this task is incredibly complex. Given my own approach to problem-solving, I reduced the complexity, and "flattened" the data. A simpler data-set should give more possibilities. This might reduce the finesse of the solution but solving a problem is what it's all about\
 After wasting a couple of hours working with flattened data, I reverted strategy back to working directly with json, as my strategy whent from making something flexible, to something more specific to solv this assignment
 #### Time Zones
 Time zones is in theory not that hard, but I spent a lot of time getting to know the the library, before finding a smooth solution. The solution takes the actual time-zone and not a specified number of hours to offset, (making future adaptions easier)
@@ -47,8 +44,8 @@ This is something I'm struggeling to implement in a meaningful manner in this ty
 
 ## Assumptions
 **Assistance** - The abilities of a programmer is proportional to their ability to google, read documentation and use any trick necessary to overcome a challenge. I have done all of this to get this assigment done in a timely and meaningful manner\
-**Timezone** - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year\
-**JSON** - How the comparison is done is not importan, (the assignment is not to follow some universal "by-the-book" rules for parsing json data
+**Timezone** - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year. This required to make some changes to the "production" diff.json-file, so the testing would function properly\
+**JSON** - Json conversion to a string will be outputted as the system sees fit, so I assumed that the order compared to the text in the diff.json was unimportant
 
 
 ## Resources
@@ -85,7 +82,6 @@ This is something I'm struggeling to implement in a meaningful manner in this ty
        }
      ]
    }
-
 ```
 
 </details>
@@ -117,9 +113,7 @@ This is something I'm struggeling to implement in a meaningful manner in this ty
       "extraTime": 0
     }
   ]
-}
-
-```
+}```
 
 </details>
 
@@ -159,14 +153,10 @@ This is something I'm struggeling to implement in a meaningful manner in this ty
       }
     ]
   }
-}
-
-
-```
+}```
 
 </details>
 
-___
 ___
 # Assignment
 
