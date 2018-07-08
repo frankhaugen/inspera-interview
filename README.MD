@@ -17,8 +17,8 @@ The biggest challenges was finding a way to compare json objects. Camparing obje
 6. Add "reviewer" to GitHub repository
 
 ### Assumptions
-**Git** - The repo hasn't had a .gitignore during development, meaning that the repo is full of "garbage"
-**Readability** - I've focused on human-readable naming and lot's of comments and assembled a javadoc
+**Git** - The repo hasn't had a .gitignore during development, meaning that the repo is full of "garbage"\ 
+**Readability** - I've focused on human-readable naming and lot's of comments and assembled a javadoc\ 
 **Assistance** - The abilities of a programmer is proportional to their ability to google, read documentation and use any trick necessary to overcome a challenge. I have done all of this to get this assigment done in a timely and meaningful manner. Including calling a friend to get some feedback on my json-evaluating code, resulting in a major re-write\
 **Timezone** - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year. This required to make some changes to the "production" diff.json-file, so the testing would function properly\
 **JSON** - Json conversion to a string will be outputted as the system sees fit, so I assumed that the order compared to the text in the diff.json was unimportant
