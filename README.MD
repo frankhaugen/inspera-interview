@@ -1,27 +1,29 @@
-# Solution
+## Documentation
+See further down for the complete assignment.
 
-## Progress
-Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 | 6/7 | 7/7 | 8/7
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
-Hours | 2 | 0 | 0 | 0 | 3 | 2 | 2 | 2 | 1 | 1 | 0 | 3
-Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | Parser | Parser | 0 | jUnit 
+This readme has been used to write notes and keep track of the assignment.
 
-(Maybe doing this in the middle of my summer-plans was a bad idea)  
-Total time spent: 15  
-A lot of the reading and watching tutorials have not been included\ Also the time spent is guestimates and not stopwatch-accurate, and so it's been rounded up for sake of honesty
+### Summary
+This task seemed to be easy, as I just had to learn: a new IDE and tools, programming language, data format (json) and Unit Testing; a couple of hours and "boom" I'd be finished. So two weeks later, (though only two work-days in actual effective working time), I'm a bit more humbled. Because learning is a goal onto itself, this assignment has been very rewarding, and I want to make it better then it is, so I just might edit this code after I have turned it in for review.
 
-## Day-by-day overview
-**27/06:** Created a virtual Linux machine in VirtualBox to test IDEs, and toyed around with some code, and libraries. I also watched/read tutorials on the uses of Java IDEs\
-**01/07:** I did at reset of the project to "start over" on GitHub. I configured NetBeans on my primary desktop computer. Ending with making a class to extract json text from the json-files "before" and "after". Before this I also spent some time learning Java\
-**02/07:** The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library\
-**03/07:** Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java\
-**04/07:** Worked on the parser using a traditional "flattened" data to compare the data\
-**05/07:** Read some more Json documentation and found a better way, (using objects directly), but didn't really get it to work as I wanted\
-**06/07:** Finished work on the parser, (there are some issues with the presentation/ordering of some elements\
-**08/07:** Finishing up with Unit Testing, beautification, and writing the last documentation
+The biggest challenges was finding a way to compare json objects. Camparing objects is something that I'm familiar with from C# and Powershell, but Java is more limited, (maybe there are some nice libraries I haven't found yet)
 
+### Assignment
+1. Take two JSONObjects as input and return a JSONObject that details the changes between the two
+2. Change the datetime in the output to Oslo timezone
+3. Implement unit testing
+4. Document the code
+5. Focus on readability and maintainability
+6. Add "reviewer" to GitHub repository
 
-## My thought processes
+### Assumptions
+**Git** - The repo hasn't had a .gitignore during development, meaning that the repo is full of "garbage"
+**Readability** - I've focused on human-readable naming and lot's of comments and assembled a javadoc
+**Assistance** - The abilities of a programmer is proportional to their ability to google, read documentation and use any trick necessary to overcome a challenge. I have done all of this to get this assigment done in a timely and meaningful manner. Including calling a friend to get some feedback on my json-evaluating code, resulting in a major re-write\
+**Timezone** - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year. This required to make some changes to the "production" diff.json-file, so the testing would function properly\
+**JSON** - Json conversion to a string will be outputted as the system sees fit, so I assumed that the order compared to the text in the diff.json was unimportant
+
+### My thought processes
 #### Documentation
 I am documenting this in the way I've been familiar with the last few years, and is more of a freeform method, rather than a documentation framework/standard. Working within govenrment bounderies, the focus was to write as much as possible and not worry about form
 
@@ -34,26 +36,48 @@ Time zones is in theory not that hard, but I spent a lot of time getting to know
 #### Unit Testing
 This is something I'm struggeling to implement in a meaningful manner in this type of project, but I'm working on getting comfortable with the logic behind it. I feel that this project isn't well-suited for Unit Testing as I'm building the whole thing in one big messy branch
  
-## Comments
-* The assignment does not give context to the json-data, or the assignment as a whole, (lacks a business-case framework to understand the need that is to be fulfilled)
+### Comments
+* The assignment does not give context to the json-data, or the assignment as a whole, (lacks a business-case to frame the need that is to be fulfilled)
 * The suggested JSON library was confusingly hard to find documentation for, so I chose to use org.json instead
 * Time-Zones SUCK! Java datetime-handling is convoluted, and as unintuitive as it comes
 * Was tempted to convert JSON to XML, to work with a more familiar data format, but resisted. JSON is similar, but different enough to cause some frustrations, resulted in a lot of reading
-* The json documentation, and articles on the subject of merging n level data, is to flatten it
+* Finding the best way to work with json-data, (according to the internet), is to use loops to get through it
 * Using Git, (GitHub), is a must, but I started off wrong. I'm used to working with projects that only I contribute to, so branching is something I need better routines for. In this project I should have setup the "main" class in "Master" and branched out to a "develop" with "features" under that; attempting to only work within a set of files related to one set of functionality. I have jumped around working on the entire code simultaniously, and not in a tactical mannar to have maximum focus and efficency
 
-## Assumptions
-**Assistance** - The abilities of a programmer is proportional to their ability to google, read documentation and use any trick necessary to overcome a challenge. I have done all of this to get this assigment done in a timely and meaningful manner\
-**Timezone** - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year. This required to make some changes to the "production" diff.json-file, so the testing would function properly\
-**JSON** - Json conversion to a string will be outputted as the system sees fit, so I assumed that the order compared to the text in the diff.json was unimportant
 
 
-## Resources
+
+### Progress
+Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 | 6/7 | 7/7 | 8/7
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+Hours | 2 | 0 | 0 | 0 | 3 | 2 | 2 | 2 | 1 | 1 | 0 | 3
+Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | Parser | Parser | 0 | jUnit 
+
+(Maybe doing this in the middle of my summer-plans was a bad idea)  
+Total time spent: 15  
+A lot of the reading and watching tutorials have not been included\
+Also the time spent is guestimates and not stopwatch-accurate, and so it's been rounded up for sake of honesty
+
+### Day-by-day overview
+**27/06:** Created a virtual Linux machine in VirtualBox to test IDEs, and toyed around with some code, and libraries. I also watched/read tutorials on the uses of Java IDEs\
+**01/07:** I did at reset of the project to "start over" on GitHub. I configured NetBeans on my primary desktop computer. Ending with making a class to extract json text from the json-files "before" and "after". Before this I also spent some time learning Java\
+**02/07:** The work on the json-text extraction was expanded, and I read a lot of documentation on json and the org.json library\
+**03/07:** Getting tired of json, I tackled timezones. Timezones was somewhat of a hassle due to my complete inexperience with Java\
+**04/07:** Worked on the parser using a traditional "flattened" data to compare the data\
+**05/07:** Read some more Json documentation and found a better way, (using objects directly), but didn't really get it to work as I wanted\
+**06/07:** Finished work on the parser, (there are some issues with the presentation/ordering of some elements\
+**08/07:** Finishing up with Unit Testing, beautification, and writing the last documentation
+
+
+
+
+
+### Resources
 [json2table](http://json2table.com) - Simple tool to visualize json data in a simple table, to easier make assumptions about how to treat the data
 [Java DateTime timezone conversion](https://www.mkyong.com/java/java-convert-date-and-time-between-timezone/) - Tutorial on timezones
 
 
-## json data
+### json data
 <details><summary>Expand before.json</summary>
 
 ```json
@@ -161,25 +185,25 @@ This is something I'm struggeling to implement in a meaningful manner in this ty
 </details>
 
 ___
-# Assignment
+## Assignment
 
-## Goal
+### Goal
 The goal of the project is to implement a parser that takes two JSONObjects (net.sf.json.JSONObject, or another similar framework) as input and returns a JSONObject that details the changes between the two input objects.
 
 The focus should be on readability and maintainability of the code, not on performance. The idea is to give us an indication of your coding style.
 
-## Setup
+### Setup
 - Install Maven
 - Run "mvn install" to download dependencies
 - Implement functionality described in "Assignments" below
 
 Feel free to use any external libraries you want, just add them to the .pom file.
 
-## Assignments
+### Assignments
 - Implement the parser
 - The parser should take two JSONObjects as input, and output a new JSONObject on the following format:
 
-```json
+```
 {
   "meta": [
     // List of the fields updated with before and after values
