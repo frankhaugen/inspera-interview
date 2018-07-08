@@ -113,7 +113,8 @@ This is something I'm struggeling to implement in a meaningful manner in this ty
       "extraTime": 0
     }
   ]
-}```
+}
+```
 
 </details>
 
@@ -153,7 +154,9 @@ This is something I'm struggeling to implement in a meaningful manner in this ty
       }
     ]
   }
-}```
+}
+```
+
 
 </details>
 
