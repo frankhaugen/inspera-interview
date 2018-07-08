@@ -5,6 +5,7 @@ Type | 27/6 | 28/6 | 29/6 | 30/6 | 1/7 | 2/7 | 3/7 | 4/7 | 5/7 | 6/7 | 7/7
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 Hours | 2 | 0 | 0 | 0 | 3 | 2 | 2 | 2 | 1 | 1 | 2
 Work | Setup IDE | 0 | 0 | 0 | json file collector | basic json handling | TimeZone converter | Parser | Parser | jUnit 
+
 (Maybe doing this in the middle of my summer-plans was a bad idea)  
 Total time spent: 15  
 A lot of the reading and watching tutorial have not been included
@@ -36,8 +37,6 @@ Time zones is in theory not that hard, but I spent a lot of time getting to know
 #### Unit Testing
 This is something I'm struggeling to implement in a meaningful manner in this type of project, but I'm working on getting comfortable with the logic behind it. I feel that this project isn't well-suited for Unit Testing as I'm building the whole thing in one big messy branch
  
-
-
 ## Comments
 * The assignment does not give context to the json-data, or the assignment as a whole, (lacks a business-case framework to understand the need that is to be fulfilled)
 * The suggested JSON library was confusingly hard to find documentation for, so I chose to use org.json instead
@@ -47,9 +46,10 @@ This is something I'm struggeling to implement in a meaningful manner in this ty
 * Using Git, (GitHub), is a must, but I started off wrong. I'm used to working with projects that only I contribute to, so branching is something I need better routines for. In this project I should have setup the "main" class in "Master" and branched out to a "develop" with "features" under that; attempting to only work within a set of files related to one set of functionality. I have jumped around working on the entire code simultaniously, and not in a tactical mannar to have maximum focus and efficency
 
 ## Assumptions
-Assistance - The abilities of a programmer is proportional to their ability to google, read documentation and use any trick necessary to overcome a challenge. I have done all of this to get this assigment done in a timely and meaningful manner
-Timezone - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year
-JSON - How the comparison is done is not importan, (the assignment is not to follow some universal "by-the-book" rules for parsing json data
+**Assistance** - The abilities of a programmer is proportional to their ability to google, read documentation and use any trick necessary to overcome a challenge. I have done all of this to get this assigment done in a timely and meaningful manner\
+**Timezone** - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year\
+**JSON** - How the comparison is done is not importan, (the assignment is not to follow some universal "by-the-book" rules for parsing json data
+
 
 ## Resources
 [json2table](http://json2table.com) - Simple tool to visualize json data in a simple table, to easier make assumptions about how to treat the data
@@ -166,13 +166,7 @@ JSON - How the comparison is done is not importan, (the assignment is not to fol
 
 </details>
 
-
-
-
-
-
-
-
+___
 ___
 # Assignment
 
