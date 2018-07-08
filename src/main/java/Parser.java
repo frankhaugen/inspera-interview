@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -7,9 +6,14 @@ import org.json.JSONObject;
  */
 public class Parser {
      
+     public static JSONObject jsonBefore;
+     public static JSONObject jsonAfter;
+     
+     
      /**
-      *	Created to parse two json datasets and returns a  
-      * parsed json dataset
+      *	Gives out a parsed JsonObject based on two given JssonObjects
+      * The parsing evaluates candidates who have been edited, removed and added
+      * 
       * 
       * @param before Takes an JSONObject
       * @param after Takes a JSONObject
@@ -17,83 +21,19 @@ public class Parser {
       */
      public static JSONObject parse(JSONObject before, JSONObject after) {
 	 
+	  jsonBefore = before;
+	  jsonAfter = after;
+	  
 	  // Create output JSONObject
 	  JSONObject output = new JSONObject();
 	  
-	  // Create JSONObject to contain metadata
-	  JSONArray outputMeta = GetMetadata(before.getJSONObject("meta"), after.getJSONObject("meta"));
+	  // Create JSONObject that contains merged metadata
+	  JSONArray outputMeta = GetMetadata(jsonBefore.getJSONObject("meta"), jsonAfter.getJSONObject("meta"), new String[] {"title","endTime"});
 	  
+	  // Collect data about changes to candidates list
+	  JSONObject outputCandidates = GetCandidates(jsonBefore, jsonAfter);
 	  
-	  JSONObject outputCandidates = new JSONObject();
-	  
-	  JSONArray outputEdited = new JSONArray();
-	  JSONArray outputAdded = new JSONArray();
-	  JSONArray outputRemoved = new JSONArray();
-	  
-	  
-	  JSONArray inputCandidatesBefore = before.getJSONArray("candidates");
-	  JSONArray inputCandidatesAfter = after.getJSONArray("candidates");
-	  
-	  
-	  // Check for edited
-	  inputCandidatesBefore.forEach(a ->
-	  {
-	       JSONObject candBefore = (JSONObject)a;
-	       inputCandidatesAfter.forEach(b ->
-	       {
-		    JSONObject candAfter = (JSONObject)b;
-		    if (candBefore.get("id") == candAfter.get("id"))
-		    {
-			 outputEdited.put(new JSONObject().put("id", candBefore.getInt("id")));
-		    }
-	       });
-	  });
-	  
-	  // Delete edited entries to simplify the process of sort added and deleted
-	  outputEdited.forEach(c ->
-	  {
-	       for (int i = 0; i < inputCandidatesBefore.length(); i++)
-	       {
-		    JSONObject candTest = (JSONObject)c;
-		    if (inputCandidatesBefore.getJSONObject(i).get("id") == candTest.get("id") )
-		    {
-			 inputCandidatesBefore.remove(i);
-		    }
-	       }
-	       for (int i = 0; i < inputCandidatesAfter.length(); i++)
-	       {
-		    JSONObject candTest = (JSONObject)c;
-		    if (inputCandidatesAfter.getJSONObject(i).get("id") == candTest.get("id") )
-		    {
-			 inputCandidatesAfter.remove(i);
-		    }
-	       }
-	  });
-	  
-	  /// TODO: Can this be done differently, (extract tom function/method?)
-	  // Add removed to JSONArray
-	  inputCandidatesBefore.forEach(a ->
-	  {
-	       JSONObject candBefore = (JSONObject)a;
-	       outputRemoved.put(new JSONObject().put("id", candBefore.getInt("id")));
-	  });
-	  
-	  // Add added to JSONArray
-	  inputCandidatesAfter.forEach(a ->
-	  {
-	       JSONObject candAfter = (JSONObject)a;
-	       outputAdded.put(new JSONObject().put("id", candAfter.getInt("id")));
-	  });
-	  
-	  
-	  // Collect the different types for 
-	  outputCandidates.put("edited", outputEdited);
-	  outputCandidates.put("added", outputAdded);
-	  outputCandidates.put("removed", outputRemoved);
-	  
-	  
-	  // Final pieces of the out JSONObject
-	  
+	  // Collect JSON data in the output
 	  output.put("candidates", outputCandidates);
 	  output.put("meta", outputMeta);
 	  
@@ -101,13 +41,19 @@ public class Parser {
 	  return output;
     }
      
-     
-     // Collects the meta date from the two JSONObjects
-     public static JSONArray GetMetadata(JSONObject inputBefore, JSONObject inputAfter)
+     /**
+      * Extracts metadata fields from two jsonobject containing the keys given
+      * 
+      * @param inputBefore First jsonObject
+      * @param inputAfter Second jsonObject
+      * @param metadataFields string array of fields to be extracted
+      * @return JsonArray containing metadata
+      */
+     public static JSONArray GetMetadata(JSONObject inputBefore, JSONObject inputAfter, String[] metadataFields)
      {
 	  JSONArray output = new JSONArray();
 	  
-	  String[] metadataFields = {"title","endTime"};
+	  //String[] metadataFields = {"title","endTime"};
 	  
 	  // Use metadate keys to extract values specified above
 	  for (String metadataField : metadataFields)
@@ -126,4 +72,103 @@ public class Parser {
 	  
 	  return output;
      }
+     
+     
+     /**
+      * Collects the different types of changes done to the list of candidates between the two JsonObjects
+      * 
+      * @param inputBefore JsonObject
+      * @param inputAfter JsonObject
+      * @return JsonObject
+      */
+     public static JSONObject GetCandidates(JSONObject inputBefore, JSONObject inputAfter)
+     {
+	  JSONObject output = new JSONObject();
+	  
+	  JSONArray CandidatesBefore = inputBefore.getJSONArray("candidates");
+	  JSONArray CandidatesAfter = inputAfter.getJSONArray("candidates");
+	  
+	  // Add edited candidates to output JsonObject
+	  output.put("edited", GetEditedCadidates(inputBefore.getJSONArray("candidates"), inputAfter.getJSONArray("candidates")));
+	  
+	  // Add removed to JSONArray
+	  JSONArray outputRemoved = new JSONArray();
+	  CandidatesBefore.forEach(a ->
+	  {
+	       JSONObject candBefore = (JSONObject)a;
+	       outputRemoved.put(new JSONObject().put("id", candBefore.getInt("id")));
+	  });
+	  
+	  // Add added to JSONArray
+	  JSONArray outputAdded = new JSONArray();
+	  CandidatesAfter.forEach(a ->
+	  {
+	       JSONObject candAfter = (JSONObject)a;
+	       outputAdded.put(new JSONObject().put("id", candAfter.getInt("id")));
+	  });
+	  
+	  
+	  // Collect the different types for 
+	  output.put("added", outputAdded);
+	  output.put("removed", outputRemoved);
+	  
+	  return output;
+     }
+     
+     /**
+      * Gets the candidates that are in both arrays, and deletes them,
+      * (Deteltion functionality was accidentaly brought when separration out to a method,
+      * It is unclear why the deletions work)
+      * 
+      * @param inputBefore JsonArray containing a list of candidates
+      * @param inputAfter JsonArray containing a list of candidates
+      * @return JsonArray containing only the candidates located in both JsonObjects
+      */
+     public static JSONArray GetEditedCadidates(JSONArray inputBefore, JSONArray inputAfter)
+     {
+	  JSONArray output = new JSONArray();
+	  
+	  // Check for candidates existing i both arrays
+	  inputBefore.forEach(a ->
+	  {
+	       JSONObject candBefore = (JSONObject)a;
+	       inputAfter.forEach(b ->
+	       {
+		    JSONObject candAfter = (JSONObject)b;
+		    if (candBefore.get("id") == candAfter.get("id"))
+		    {
+			 output.put(new JSONObject().put("id", candBefore.getInt("id")));
+		    }
+	       });
+	  });
+	  
+	  // Delete edited entries to simplify the process of sort added and deleted
+	  // Unclear how this part sgould work on a variable set in a different method
+	  output.forEach(c ->
+	  {
+	       for (int i = 0; i < inputBefore.length(); i++)
+	       {
+		    JSONObject candTest = (JSONObject)c;
+		    if (inputBefore.getJSONObject(i).get("id") == candTest.get("id") )
+		    {
+			 inputBefore.remove(i); // Why does this work?
+		    }
+	       }
+	       for (int i = 0; i < inputAfter.length(); i++)
+	       {
+		    JSONObject candTest = (JSONObject)c;
+		    if (inputAfter.getJSONObject(i).get("id") == candTest.get("id") )
+		    {
+			 inputAfter.remove(i);  // Why does this work?
+		    }
+	       }
+	  });
+	  
+	  
+	  // returns a JsonArray with the candidates that are in both JsonArrays
+	  return output;
+
+     }
+     
+     
 }
