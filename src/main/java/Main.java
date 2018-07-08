@@ -2,8 +2,7 @@ import org.json.*;
 
 public class Main {
      
-    public Parser parser = new Parser();
-     
+    
     public static void main(String[] args)
     {
         
