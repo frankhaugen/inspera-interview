@@ -179,7 +179,7 @@ Feel free to use any external libraries you want, just add them to the .pom file
 - Implement the parser
 - The parser should take two JSONObjects as input, and output a new JSONObject on the following format:
 
-```
+```json
 {
   "meta": [
     // List of the fields updated with before and after values
