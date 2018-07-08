@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -106,24 +107,18 @@ public class Parser {
      {
 	  JSONArray output = new JSONArray();
 	  
+	  String[] metadataFields = {"title","endTime"};
 	  
-	  // Metadata has two child elements, this is the one we 
-	  JSONObject outputMetaChild1 = new JSONObject();
-	  JSONObject outputMetaChild2 = new JSONObject();
-	  
-	  // 
-	  outputMetaChild1.put("field", "title");
-	  outputMetaChild1.put("before", inputMetaBefore.get("title"));
-	  outputMetaChild1.put("after", inputMetaAfter.get("title"));
-	  
-	  
-	  outputMetaChild2.put("field", "endTime");
-	  outputMetaChild2.put("before", TimeZoneConverter.Convert(inputMetaBefore.get("endTime").toString(), "Europe/Oslo"));
-	  outputMetaChild2.put("after", TimeZoneConverter.Convert(inputMetaAfter.get("endTime").toString(), "Europe/Oslo"));
-	  
-	  
-	  outputMeta.put(outputMetaChild1);
-	  outputMeta.put(outputMetaChild2);
+	  for (String metadataField : metadataFields)
+	  {
+	       JSONObject metaData = new JSONObject();
+	       metaData.put("field", metadataField);
+	       try{ metaData.put("before", TimeZoneConverter.Convert(inputBefore.get(metadataField).toString(), "Europe/Oslo")); } 
+	       catch (Exception e) { metaData.put("before", inputBefore.get(metadataField)); }
+	       try{ metaData.put("after", TimeZoneConverter.Convert(inputBefore.get(metadataField).toString(), "Europe/Oslo")); } 
+	       catch (Exception e) { metaData.put("after", inputAfter.get(metadataField)); }
+	       output.put(metaData);
+	  }
 	  
 	  return output;
      }
