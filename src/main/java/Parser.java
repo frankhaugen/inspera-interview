@@ -16,32 +16,12 @@ public class Parser {
       */
      public static JSONObject parse(JSONObject before, JSONObject after) {
 	 
-	  JSONObject inputMetaBefore = before.getJSONObject("meta");
-	  JSONObject inputMetaAfter = after.getJSONObject("meta");
-	  
 	  // Create output JSONObject
 	  JSONObject output = new JSONObject();
 	  
 	  // Create JSONObject to contain metadata
-	  JSONArray outputMeta = new JSONArray();
+	  JSONArray outputMeta = GetMetadata(before.getJSONObject("meta"), after.getJSONObject("meta"));
 	  
-	  // Metadata has two child elements, this is the one we 
-	  JSONObject outputMetaChild1 = new JSONObject();
-	  JSONObject outputMetaChild2 = new JSONObject();
-	  
-	  // 
-	  outputMetaChild1.put("field", "title");
-	  outputMetaChild1.put("before", inputMetaBefore.get("title"));
-	  outputMetaChild1.put("after", inputMetaAfter.get("title"));
-	  
-	  
-	  outputMetaChild2.put("field", "endTime");
-	  outputMetaChild2.put("before", TimeZoneConverter.Convert(inputMetaBefore.get("endTime").toString(), "Europe/Oslo"));
-	  outputMetaChild2.put("after", TimeZoneConverter.Convert(inputMetaAfter.get("endTime").toString(), "Europe/Oslo"));
-	  
-	  
-	  outputMeta.put(outputMetaChild1);
-	  outputMeta.put(outputMetaChild2);
 	  
 	  JSONObject outputCandidates = new JSONObject();
 	  
@@ -127,6 +107,23 @@ public class Parser {
 	  JSONArray output = new JSONArray();
 	  
 	  
+	  // Metadata has two child elements, this is the one we 
+	  JSONObject outputMetaChild1 = new JSONObject();
+	  JSONObject outputMetaChild2 = new JSONObject();
+	  
+	  // 
+	  outputMetaChild1.put("field", "title");
+	  outputMetaChild1.put("before", inputMetaBefore.get("title"));
+	  outputMetaChild1.put("after", inputMetaAfter.get("title"));
+	  
+	  
+	  outputMetaChild2.put("field", "endTime");
+	  outputMetaChild2.put("before", TimeZoneConverter.Convert(inputMetaBefore.get("endTime").toString(), "Europe/Oslo"));
+	  outputMetaChild2.put("after", TimeZoneConverter.Convert(inputMetaAfter.get("endTime").toString(), "Europe/Oslo"));
+	  
+	  
+	  outputMeta.put(outputMetaChild1);
+	  outputMeta.put(outputMetaChild2);
 	  
 	  return output;
      }
