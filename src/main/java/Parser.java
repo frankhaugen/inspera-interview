@@ -109,14 +109,18 @@ public class Parser {
 	  
 	  String[] metadataFields = {"title","endTime"};
 	  
+	  // Use metadate keys to extract values specified above
 	  for (String metadataField : metadataFields)
 	  {
 	       JSONObject metaData = new JSONObject();
 	       metaData.put("field", metadataField);
+	       
 	       try{ metaData.put("before", TimeZoneConverter.Convert(inputBefore.get(metadataField).toString(), "Europe/Oslo")); } 
 	       catch (Exception e) { metaData.put("before", inputBefore.get(metadataField)); }
+	       
 	       try{ metaData.put("after", TimeZoneConverter.Convert(inputBefore.get(metadataField).toString(), "Europe/Oslo")); } 
 	       catch (Exception e) { metaData.put("after", inputAfter.get(metadataField)); }
+	       
 	       output.put(metaData);
 	  }
 	  
