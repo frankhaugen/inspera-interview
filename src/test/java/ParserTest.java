@@ -1,5 +1,6 @@
 //import jdk.nashorn.internal.runtime.RewriteException;
 import org.json.JSONObject;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -39,21 +40,17 @@ public class ParserTest {
 	  
     }
     
-    // Test to see if 
+    // Test to see if the metadata is collected correctly
     @Test
-    public void testIfJsonIsParsedCorrectly2()
+    public void testIfJsonMetaData()
     {
-	 JSONAssert.assertEquals(jsonResult, jsonDiff, JSONCompareMode.LENIENT);
+	 JSONAssert.assertEquals(jsonResult.get("meta").toString(), jsonDiff.get("meta").toString(), JSONCompareMode.LENIENT);
     }
     
-    // Test to see if 
+    // Test to see if the whole parser works as planned
     @Test
-    public void testIfJsonMetaDataIsCorrect()
+    public void testIfJsonParser()
     {
-	 System.out.println("Diff + Result:");
-	 System.out.println(jsonDiff.toString(0));
-	 System.out.println(jsonResult.toString(0));
-	 
 	 JSONAssert.assertEquals(jsonResult, jsonDiff, JSONCompareMode.LENIENT);
     }
 }
