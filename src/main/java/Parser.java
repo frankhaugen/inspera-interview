@@ -112,8 +112,9 @@ public class Parser {
 	  
 	  
 	  // Final pieces of the out JSONObject
+	  
+	  output.put("candidates", outputCandidates);
 	  output.put("meta", outputMeta);
-	  output.put("candidatates", outputCandidates);
 	  
 	  // Output a JSONObject
 	  return output;   

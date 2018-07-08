@@ -1,12 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: ParserTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.177 sec <<< FAILURE!
-testIfJsonIsParsedCorrectly(ParserTest)  Time elapsed: 0.128 sec  <<< FAILURE!
-java.lang.AssertionError: 
-Expected: candidatates
-     but none found
- ; meta[after=2016-01-20T19:00:00+01:00]
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.164 sec <<< FAILURE!
+testIfJsonIsParsedCorrectly(ParserTest)  Time elapsed: 0.116 sec  <<< FAILURE!
+java.lang.AssertionError: candidates.added[0] Could not find match for element [{"id":13}] ; candidates.edited[]: Expected 1 values but got 2 ; candidates.removed[0] Could not find match for element [{"id":12}] ; meta[after=2016-01-20T19:00:00+01:00]
 Expected: a JSON object
      but none found
  ; meta[after=2016-01-20T20:00:00+02]
@@ -14,7 +11,7 @@ Unexpected: a JSON object
 
 	at org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:604)
 	at org.skyscreamer.jsonassert.JSONAssert.assertEquals(JSONAssert.java:587)
-	at ParserTest.testIfJsonIsParsedCorrectly(ParserTest.java:42)
+	at ParserTest.testIfJsonIsParsedCorrectly(ParserTest.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
