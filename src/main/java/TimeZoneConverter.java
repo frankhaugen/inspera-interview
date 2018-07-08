@@ -7,7 +7,6 @@ import java.time.format.DateTimeFormatter;
  */
 public class TimeZoneConverter
 {
-     
      public static String Convert(String inputTime, String zoneId)
      {
 	  // Formatter to specify the returned datetime strings's format
@@ -20,6 +19,6 @@ public class TimeZoneConverter
 	  ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of(zoneId));
 	  
 	  String output = zonedDateTime.format(dtFormatter);
-	  return output;
+	  return output.substring(0, output.length() - 3); // Cheat to get the wanted format for date, (+01 in stead of +01:00 which is proper)
      }
 }

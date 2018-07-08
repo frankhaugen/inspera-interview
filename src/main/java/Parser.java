@@ -106,9 +106,9 @@ public class Parser {
 	  
 	  
 	  // Collect the different types for 
-	  outputCandidates.accumulate("edited", outputEdited);
-	  outputCandidates.accumulate("added", outputAdded);
-	  outputCandidates.accumulate("removed", outputRemoved);
+	  outputCandidates.put("edited", outputEdited);
+	  outputCandidates.put("added", outputAdded);
+	  outputCandidates.put("removed", outputRemoved);
 	  
 	  
 	  // Final pieces of the out JSONObject
@@ -117,6 +117,17 @@ public class Parser {
 	  output.put("meta", outputMeta);
 	  
 	  // Output a JSONObject
-	  return output;   
+	  return output;
     }
+     
+     
+     // Collects the meta date from the two JSONObjects
+     public static JSONArray GetMetadata(JSONObject inputBefore, JSONObject inputAfter)
+     {
+	  JSONArray output = new JSONArray();
+	  
+	  
+	  
+	  return output;
+     }
 }

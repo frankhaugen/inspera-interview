@@ -2,6 +2,8 @@
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
+import org.junit.gen5.api.Disabled;
 import org.junit.gen5.commons.*;
 //import org.junit.Assert.*;
 import org.skyscreamer.jsonassert.*;
@@ -36,18 +38,14 @@ public class ParserTest {
 	jsonResult = Parser.parse(jsonBefore,jsonAfter) ;
     }
     
+    // Test to see if 
     @Test
     public void testIfJsonIsParsedCorrectly()
     {
 	 System.out.println("Diff + Result:");
-	 System.out.println(jsonDiff);
-	 System.out.println(jsonResult);
+	 System.out.println(jsonDiff.toString(0));
+	 System.out.println(jsonResult.toString(0));
 	 
 	 JSONAssert.assertEquals(jsonResult, jsonDiff, JSONCompareMode.LENIENT);
-	 
-		 
     }
-
-    // TODO Define tests here
-
 }
