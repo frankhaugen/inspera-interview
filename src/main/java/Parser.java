@@ -118,7 +118,7 @@ public class Parser {
 	       try{ metaData.put("before", TimeZoneConverter.Convert(inputBefore.get(metadataField).toString(), "Europe/Oslo")); } 
 	       catch (Exception e) { metaData.put("before", inputBefore.get(metadataField)); }
 	       
-	       try{ metaData.put("after", TimeZoneConverter.Convert(inputBefore.get(metadataField).toString(), "Europe/Oslo")); } 
+	       try{ metaData.put("after", TimeZoneConverter.Convert(inputAfter.get(metadataField).toString(), "Europe/Oslo")); } 
 	       catch (Exception e) { metaData.put("after", inputAfter.get(metadataField)); }
 	       
 	       output.put(metaData);
