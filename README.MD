@@ -1,7 +1,7 @@
 ## Documentation
-See further down for the complete assignment.
+**See bottom of page the complete assignment text**
 
-This readme has been used to write notes and keep track of the assignment.
+This readme has been used to write notes and keep track of the assignment
 
 ### Summary
 This task seemed to be easy, as I just had to learn: a new IDE and tools, programming language, data format (json) and Unit Testing; a couple of hours and "boom" I'd be finished. So two weeks later, (though only two work-days in actual effective working time), I'm a bit more humbled. Because learning is a goal onto itself, this assignment has been very rewarding, and I want to make it better then it is, so I just might edit this code after I have turned it in for review.
@@ -10,7 +10,9 @@ The biggest challenges was finding a way to compare json objects. Camparing obje
 
 Turns out that my idea of first creating a program, then demonstrating Unit Testing afterwards, really dosen't work very well. When I learned myself Unit Testing, (basic concepts), I really appreaciated how it works
 
-My previous experiences has been mostly top-down development, (when working on game development in particular), but I did try to implement a more extensible ad maintainable code
+My previous experiences has been mostly top-down development, (when working on game development in particular), but I did try to work in a more modern approach. I worked on implement an extensible and maintainable code, using Single Responsibility as a guide. My habits from my personal projects has been pretty spot on for "clean code"-standards, but I lack experience in writing comments and documentation that other devs will read
+
+
 
 ### Assignment
 1. Take two JSONObjects as input and return a JSONObject that details the changes between the two
@@ -21,7 +23,7 @@ My previous experiences has been mostly top-down development, (when working on g
 6. Add "reviewer" to GitHub repository
 
 ### Assumptions 
-**Readability** - I've focused on human-readable naming and lot's of comments and assembled a javadoc\ 
+**Readability** - I've focused on human-readable naming and lot's of comments and assembled a javadoc\
 **Assistance** - The abilities of a programmer is proportional to their ability to google, read documentation and use any trick necessary to overcome a challenge. I have done all of this to get this assigment done in a timely and meaningful manner. Including calling a friend to get some feedback on my json-evaluating code, resulting in a major re-write\
 **Timezone** - Due to lack of flexibility in the assignment's use of the timezone specification, "For time fields the timezone should be CEST (Oslo - UTC+2)", I decided to use a bit more flexible standard, (given that there are two timezones for Oslo depending of the time of year. This required to make some changes to the "production" diff.json-file, so the testing would function properly\
 **JSON** - Json conversion to a string will be outputted as the system sees fit, so I assumed that the order compared to the text in the diff.json was unimportant
