@@ -73,10 +73,10 @@ Also the time spent is guestimates and not stopwatch-accurate, and so it's been 
 **08/07:** Finishing up with Unit Testing, beautification, and writing the last documentation
 
 ### Resources
-[Programming must-see - YouTube](https://www.youtube.com/playlist?list=PLKe2afIXvv-RHCmkIVZ3H3LaKPnugxrmv) - A YouTube playlist I put toghether with videos I found helpful\ 
-[json2table](http://json2table.com/) - Simple tool to visualize json data in a simple table, to easier make assumptions about how to treat the data\ 
-[Java DateTime timezone conversion](https://www.mkyong.com/java/java-convert-date-and-time-between-timezone/) - Tutorial on timezones\ 
-[Steve Ballmer: Developers developers developers developers](https://www.youtube.com/watch?v=Vhh_GeBPOhs) - To feel a bit better\ 
+[Programming must-see - YouTube](https://www.youtube.com/playlist?list=PLKe2afIXvv-RHCmkIVZ3H3LaKPnugxrmv) - A YouTube playlist I put toghether with videos I found helpful\
+[json2table](http://json2table.com/) - Simple tool to visualize json data in a simple table, to easier make assumptions about how to treat the data\
+[Java DateTime timezone conversion](https://www.mkyong.com/java/java-convert-date-and-time-between-timezone/) - Tutorial on timezones\
+[Steve Ballmer: Developers developers developers developers](https://www.youtube.com/watch?v=Vhh_GeBPOhs) - To feel a bit better\
 [Steve Ballmer: Developers developers developers developers!](https://www.youtube.com/watch?v=33grif58qO8) - To feel a lot better, (with music)
 
 ### json data
