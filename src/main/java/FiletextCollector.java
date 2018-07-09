@@ -11,16 +11,24 @@ import java.util.stream.Collectors;
  */
 public class FiletextCollector
 {
-     // Method to extract text from files from inputted path
-    public static String Collect(String input)
+     
+     /**Collect text data from a file
+      *
+      * @param input Path string for the file which we want to extract
+      * @return string of the contents from the file in path inputted
+      */
+     public static String Collect(String input)
     {
+	 // Create the string variable to be outputted
         String output = "";
+	
         try {
             output = Files.lines(Paths.get(input)).collect(Collectors.joining("\n"));
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+	// Return the string from the file
         return output;
     }
 }
