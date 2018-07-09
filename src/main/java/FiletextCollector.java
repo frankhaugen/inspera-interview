@@ -22,11 +22,11 @@ public class FiletextCollector
 	 // Create the string variable to be outputted
         String output = "";
 	
+	// The text contents from the file is added to the output
         try {
-            output = Files.lines(Paths.get(input)).collect(Collectors.joining("\n"));
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+	  output = Files.lines(Paths.get(input)).collect(Collectors.joining("\n")); }
+	catch (IOException ex) {
+	  Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex); }
         
 	// Return the string from the file
         return output;
