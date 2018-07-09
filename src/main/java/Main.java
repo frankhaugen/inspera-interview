@@ -12,6 +12,8 @@ public class Main {
 
 	  // Display the parsed data in the console output in a human-readable manner
 	  System.out.println(Parser.parse(jsonBefore, jsonAfter).toString(1));
-	  System.in.read();
+	  
+	  
+	  //System.in.read(); for building executables to prevent closing
     }
 }
