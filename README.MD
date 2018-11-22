@@ -1,3 +1,22 @@
+# Interview assignment
+This was an assignment I was given in the process of applying for a job at Inspera Assesment, who is a supplier of software and services for safe digital examinations in higher education.
+
+I didn't get the job, an here's their assesment of my solution:
+
+>General  
+> -Detailed well formatted description  
+> -Clearly eager to learn new things, and experienced at learning new skills  
+>  
+>Solution  
+> -Well documented  
+> -Some inconsistency in naming of methods (camelCase vs lowerCamelCase)  
+> -Use of static methods without any comments on the drawbacks (especially in terms of testability)  
+> -When looking at the Parser class I was expecting it to only handle parsing (Single Responsibility Principle), while in reality it does parsing and diffing  
+> -Something that most solutions of this task does is either parsing of JSON data to an internal class/object and/or using a JSON parser library to do marshalling of the data. I would have liked to have seen at least a mention of these approaches.  
+>  
+> -In general I think it’s a good submission, but the lack of experience working on Java projects (or bigger object-oriented projects in general) does shine through.  
+
+
 ## Documentation
 **See bottom of page the complete assignment text**
 
