@@ -2,7 +2,6 @@
 This was an assignment I was given in the process of applying for a job at Inspera Assesment, who is a supplier of software and services for safe digital examinations in higher education.
 
 I didn't get the job, an here's their assesment of my solution:
-
 >General  
 > -Detailed well formatted description  
 > -Clearly eager to learn new things, and experienced at learning new skills  
@@ -16,6 +15,7 @@ I didn't get the job, an here's their assesment of my solution:
 >  
 > -In general I think it’s a good submission, but the lack of experience working on Java projects (or bigger object-oriented projects in general) does shine through.  
 
+I don't have any issues displaying this as it's part of the learning process. This wasn't critical for me getting the job, but the 37 other applicants, many with a lot more education and relavant job-experience.
 
 ## Documentation
 **See bottom of page the complete assignment text**
